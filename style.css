@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background: #081725;
+    font-family: Josefin sans, gruppo;
+}
+
+/* navbar */
+nav {
+    display: flex;
+   
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: aliceblue;
+    height: 50px;
+    align-items: center;
+}
+
+
+nav .logo {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #E6FFE0 ;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between; 
+}
+
+nav  ul li a {
+    color: #E6FFE0;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav  ul li a:hover {
+    color: rgb(114, 199, 109);
+}
+
+/* hamburger menu */
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    padding-left: 20px;
+    
+}
+
+.menu-toggle span {
+    display: block;
+    flex-direction: column;
+    height: 3px;
+    width: 28px;
+    background-color: aliceblue;
+    border-radius: 3px;
+  
+    
+}
+
+
+/* responsive breakpoint*/
+
+/* size tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* size mobile */
+@media screen and (max-width: 576px) {
+    nav ul {
+       display: none;
+    }
+}
+
+/* size dekstop&mobile none */
+
+@media screen and (min-width:768px) {
+    .menu-toggle{
+         display: none;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .menu-toggle{
+         display: none;
+    }
+}
+
+
+h1 {
+    color: rgb(219, 255, 222);
+}
+
+.headline {
+    display: grid;
+    place-content: center;
+    min-height: 70vh;
+    text-align: left;
+    margin: 10vh;
+    max-width: 300px;
+    color: rgb(255, 255, 255);
+    font-family: "Kay Pho Du";
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 400;
+    font-style:normal;}
+
+
+/*botton explore me*/
+
+
+button {
+    display: flex;
+    border: transparent;
+    height: 20px;
+    width: 100px;
+    padding: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #9494948b;
+    color: aliceblue;
+}
+
+
+
