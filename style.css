@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    
+    box-sizing: border-box;
 }
 
 body{
@@ -12,22 +12,19 @@ body{
 /* navbar */
 nav {
     display: flex;
-   
     justify-content: space-around;
-    /* padding: 20px 0; */
     color: aliceblue;
     height: 50px;
     align-items: center;
+    padding: 0 20px;
 }
-
 
 nav .logo {
     font-family: "Kiwi Maru", serif;
     font-weight: 400;
     font-style: normal;
-    color: #E6FFE0 ;
+    color: #E6FFE0;
 }
-
 
 nav ul {
     display: flex;
@@ -36,104 +33,170 @@ nav ul {
     justify-content: space-between; 
 }
 
-nav  ul li a {
+nav ul li a {
     color: #E6FFE0;
     text-decoration: none;
     font-size: 0.8em;
 }
 
-nav  ul li a:hover {
+nav ul li a:hover {
     color: rgb(114, 199, 109);
 }
 
 /* hamburger menu */
-
 .menu-toggle {
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 20px;
     justify-content: space-between;
-    padding-left: 20px;
-    
+    cursor: pointer;
+    z-index: 99;
+    padding: 0;
 }
 
 .menu-toggle span {
     display: block;
-    flex-direction: column;
     height: 3px;
     width: 28px;
     background-color: aliceblue;
     border-radius: 3px;
-  
-    
+    transition: all 0.3s ease;
+    transform-origin: 3px 1px;
 }
 
-
-/* responsive breakpoint*/
-
-/* size tablet */
-@media screen and (max-width: 768px) {
-    nav ul {
-        width: 50%;
-    }
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0, -2px);
 }
 
-/* size mobile */
-@media screen and (max-width: 576px) {
-    nav ul {
-       display: none;
-    }
+.menu-toggle.active span:nth-child(2) {
+    transform: scale(0);
+    opacity: 0;
 }
 
-/* size dekstop&mobile none */
-
-@media screen and (min-width:768px) {
-    .menu-toggle{
-         display: none;
-    }
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(-1px, 1px);
 }
-
-@media screen and (min-width:576px) {
-    .menu-toggle{
-         display: none;
-    }
-}
-
 
 h1 {
     color: rgb(219, 255, 222);
 }
 
 .headline {
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 70vh;
     text-align: left;
-    margin: 10vh;
-    max-width: 300px;
+    margin: 5vh 10vw;
+    padding: 0;
+    max-width: 500px;
     color: rgb(255, 255, 255);
-    font-family: "Kay Pho Du";
+    font-family: "Kay Pho Du", sans-serif;
     font-weight: 400;
-    font-style: normal;
-    font-weight: 400;
-    font-style:normal;}
+}
 
+.headline h1 {
+    margin-bottom: 20px;
+}
 
-/*botton explore me*/
-
-
+.headline p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 button {
     display: flex;
-    border: transparent;
-    height: 20px;
-    width: 100px;
-    padding: 15px;
+    border: none;
+    height:30px;
+    width: 100px; 
+    padding: 1vw 2vw;
+    font-size: medium;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
     background-color: #9494948b;
     color: aliceblue;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 10px; 
 }
 
+button:hover {
+    background-color: #adadad8b;
+}
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0 10px;
+    }
 
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        height: calc(100vh - 50px);
+        width: 100%;
+        background-color: #081725;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .headline {
+        margin: 5vh 20px;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .headline h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    nav ul {
+        width: 60%;
+    }
+
+    .headline {
+        margin: 5vh 8vw;
+        max-width: 450px;
+    }
+
+    .headline h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .headline {
+        margin: 10vh 15vw;
+        max-width: 600px;
+    }
+
+    .headline h1 {
+        font-size: 4rem;
+    }
+
+    .headline p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}
