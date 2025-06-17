@@ -14,3 +14,5 @@ navLinks.forEach(link => {
         menuToggle.classList.remove('active');
     });
 });
+
+
