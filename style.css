@@ -1,33 +1,24 @@
 * {
-     padding: 0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
+
 }
 
 
-
-
-/* warning */
-
-
-
-
 body{
+    
     background: #081725;
     font-family: Josefin sans, gruppo;
     color: #e6ffe0;
     line-height: 1.5;   
 }
 
-
-/* warning */
-
-
-
-
-
 /* navbar */
 nav {
+    
     display: flex;
     justify-content:space-between;
     color: aliceblue;
@@ -44,7 +35,7 @@ nav .logo {
     font-family: "Kiwi Maru", serif;
     font-weight: 400;
     font-style: normal;
-    color: #E6FFE0;;
+    color: #BFEBB6;
     padding-left: 20px;
     z-index: 100;
 }
@@ -55,33 +46,21 @@ nav ul {
     list-style: none;
     width: 40%;
     justify-content: space-between; 
-    margin-right: 80px;
     gap: 20px;
 }
 
 nav ul li a {
-    color: #E6FFE0;
+    color: #BFEBB6;
     text-decoration: none;
     font-size: 0.8em;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: rgb(114, 199, 109);
+    color: rgb(23, 142, 45);
 }
 
 /* hamburger menu */
-/* .menu-toggle {
-    display: none;
-    flex-direction: column;
-    height: 20px;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 99;
-    padding: 0 20px;
-    margin-left: auto;
-    
-} */
 
  .menu-toggle { 
     display: none;
@@ -98,11 +77,11 @@ nav ul li a:hover {
     background-color: aliceblue;
     border-radius: 3px;
     transition: all 0.3s ease;
-    transform-origin: 3px 1px;
+    transform-origin: center;
 }
 
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(0, -2px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -111,7 +90,7 @@ nav ul li a:hover {
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(-1px, 1px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 
@@ -154,28 +133,53 @@ nav ul li a:hover {
 .green2 {
     color: #BFEBB6;
 }
-/* button {
-    display: flex;
-    border: none;
-    height:30px;
-    width: 100px; 
-    padding: 10px;
-    font-size: 0.8rem;
-    justify-content: center;
-    align-items: center;
-    background-color: #9494948b;
-    color: aliceblue;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    gap: 10px; 
+
+.elemen {
+   display: flex;
+   flex-direction: column;
 }
 
-button:hover {
-    transform: scale(1.05);
-    background-color: #c9efc28b;
-} */
+.sosmed {
+    display: flex;
+    flex-direction: column;
+}
+.garis {
+    background-color: rgba(195, 196, 197, 0.406);
+    width: 1.5px;
+    height: 120px;   
+}    
+
+img {
+    position: relative;
+    height: 28px;
+    width: 28px;
+    margin-top: 5PX;
+    
+}
 
 /* Media Queries */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    nav ul {
+        width: 60%;
+        padding-right: 80px;
+    }
+
+    .headline {
+        margin: 5vh 8vw;
+        max-width: 420px;
+        font-size: 0.9rem;
+    }
+
+    .headline h1 {
+        font-size: 2,5rem;
+    }
+    .elemen {
+        padding-left: 60px;
+    }
+    .garis {
+        padding-top: 20px;
+    }
+}
 @media screen and (max-width: 768px) {
     nav {
         padding: 0 10px;
@@ -210,7 +214,7 @@ button:hover {
 
     .headline {
         margin: 5vh 20px;
-        max-width: 100%;
+        max-width: 300px;
         text-align: left;
     }
 
@@ -219,45 +223,52 @@ button:hover {
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-    nav ul {
-        width: 60%;
-    }
-
-    .headline {
-        margin: 5vh 8vw;
-        max-width: 450px;
-    }
-
-    .headline h1 {
-        font-size: 3rem;
-    }
-}
 
 @media screen and (min-width: 1024px) {
+    nav ul {
+        padding-right: 80px;
+    }
     .headline {
         margin: 10vh 15vw;
-        max-width: 600px;
+        max-width: 400px;
     }
 
     .headline h1 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .headline p {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     button {
         font-size: 0.8;
     }
+    .elemen {
+        position: absolute;
+        margin-left: 15vw;
+        bottom: 70px;
+    }    
+    .sosmed {
+        margin-left: -13px;
+        margin-top: 10px;
+        gap: 20px;
+    }
 }
 
 @media screen and (max-width: 480px) {
+    .headline {
+        text-align: center;
+    }
     .headline h1 {
         font-size: 1.5rem;
+        white-space: normal;
+       
     }
     nav ul {
         font-size: 1rem;
     }
-} 
+    .garis {
+        background-color: transparent;
+    }
+}
